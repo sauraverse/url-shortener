@@ -24,9 +24,13 @@ async function handleUserLogin(req, res){
     
     const token = setUser(user);
     
-    res.cookie("uid", token);
+    // res.cookie("uid", token,{   
+    //     // domain: ".sauraverse.com", 
+    //     // expire: new Date(Date.now() + 900000),
+    // });
 
-    return res.redirect("/");
+    // return res.redirect("/");
+    return res.json({token})
 }
 
 module.exports = {handleUserSignUp, handleUserLogin}
